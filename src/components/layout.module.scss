@@ -1,0 +1,16 @@
+@import "./src/styles/custom.scss";
+
+.grid {
+    display: grid;
+    grid-template-columns: 2;
+}
+
+.pageList {
+    grid-column: 1;
+    width: 20vw;
+    padding: 20px;
+}
+
+.content {
+    grid-column: 2;
+}
