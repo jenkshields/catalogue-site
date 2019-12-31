@@ -102,7 +102,7 @@ class Compilation extends React.Component {
 
     let value = this.state.artistValue
 
-    if (value == 0 ) {
+    if (value === 0 ) {
       artistOne.display = 'none';
       artistTwo.display = 'none';
       artistThree.display = 'none';
@@ -115,29 +115,29 @@ class Compilation extends React.Component {
       artistTen.display = 'none';
       artistEleven.display = 'none';
       artistTwelve.display = 'none';
-    } else if (value == "1") {
+    } else if (value === "1") {
       artistOne.display = 'block';
-    } else if (value == "2") {
+    } else if (value === "2") {
       artistTwo.display = 'block';
-    } else if (value == "3") {
+    } else if (value === "3") {
       artistThree.display = 'block';
-    } else if (value == '4') {
+    } else if (value === '4') {
       artistFour.display = 'block';
-    } else if (value == '5') {
+    } else if (value === '5') {
       artistFive.display = 'block';
-    } else if (value == '6') {
+    } else if (value === '6') {
       artistSix.display = 'block';
-    } else if (value == '7') {
+    } else if (value === '7') {
       artistSeven.display = 'block';
-    } else if (value == '8') {
+    } else if (value === '8') {
       artistEight.display = 'block';
-    } else if (value == '9') {
+    } else if (value === '9') {
       artistNine.display = 'block';
-    } else if (value == '10') {
+    } else if (value === '10') {
       artistTen.display = 'block';
-    } else if (value == '11') {
+    } else if (value === '11') {
       artistEleven.display = 'block';
-    } else if (value == '12') {
+    } else if (value === '12') {
       artistTwelve.display = 'block';
     }
 
@@ -153,18 +153,18 @@ class Compilation extends React.Component {
               <h1 className={`display-2 text-center ` + compStyles.title}>Compilation</h1>
               <p className={compStyles.subtitle}>An exhibition of new works.</p>
               <ul className={`list-unstyled ` + compStyles.list}>
-                <li onClick={this.handleClick} data-id='1'>Annemieke Montagne</li>
-                <li onClick={this.handleClick} data-id='2'>Jenna Ingram</li>
-                <li onClick={this.handleClick} data-id='3'>Kerry Tunstall</li>
-                <li onClick={this.handleClick} data-id='4'>Julia Sharp</li>
-                <li onClick={this.handleClick} data-id='5'>Kara Burrowes</li>
-                <li onClick={this.handleClick} data-id='6'>Jason Ware</li>
-                <li onClick={this.handleClick} data-id='7'>Kate Rennie</li>
-                <li onClick={this.handleClick} data-id='8'>Samuel Lewis</li>
-                <li onClick={this.handleClick} data-id='9'>Irenie How</li>
-                <li onClick={this.handleClick} data-id='10'>Shannon Williamson</li>
-                <li onClick={this.handleClick} data-id='11'>Nick White</li>
-                <li onClick={this.handleClick} data-id='12'>Gemma Syme</li>
+                <li><button className={compStyles.button} onClick={this.handleClick} data-id='1'>Annemieke Montagne</button></li>
+                <li><button className={compStyles.button} onClick={this.handleClick} data-id='2'>Jenna Ingram</button></li>
+                <li><button className={compStyles.button} onClick={this.handleClick} data-id='3'>Kerry Tunstall</button></li>
+                <li><button className={compStyles.button} onClick={this.handleClick} data-id='4'>Julia Sharp</button></li>
+                <li><button className={compStyles.button} onClick={this.handleClick} data-id='5'>Kara Burrowes</button></li>
+                <li><button className={compStyles.button} onClick={this.handleClick} data-id='6'>Jason Ware</button></li>
+                <li><button className={compStyles.button} onClick={this.handleClick} data-id='7'>Kate Rennie</button></li>
+                <li><button className={compStyles.button} onClick={this.handleClick} data-id='8'>Samuel Lewis</button></li>
+                <li><button className={compStyles.button} onClick={this.handleClick} data-id='9'>Irenie How</button></li>
+                <li><button className={compStyles.button} onClick={this.handleClick} data-id='10'>Shannon Williamson</button></li>
+                <li><button className={compStyles.button} onClick={this.handleClick} data-id='11'>Nick White</button></li>
+                <li><button className={compStyles.button} onClick={this.handleClick} data-id='12'>Gemma Syme</button></li>
               </ul>
           </div>
         </div>
