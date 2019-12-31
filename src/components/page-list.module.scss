@@ -1,0 +1,80 @@
+@import "./src/styles/custom.scss";
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.NavTitle {
+    grid-row: 1;
+    grid-column: 1;
+}
+
+.about {
+    grid-row: 2;
+    grid-column: 1;
+}
+
+.exhibit {
+    grid-row: 2;
+    grid-column: 2;
+}
+
+.facebook {
+    grid-row: 2;
+    grid-column: 3;
+}
+
+.instagram {
+    grid-row: 2;
+    grid-column: 4;
+}
+
+.exhibitions {
+    grid-row: 3;
+    grid-column: 1;
+}
+
+.compilation {
+    grid-row: 4;
+    grid-column: 1;
+}
+
+.back-catalogue {
+    grid-row: 4;
+    grid-column: 2;
+}
+
+@media only screen and (min-width: 800px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .exhibit {
+        grid-row: 3;
+        grid-column: 1;
+    }
+
+    .facebook {
+        grid-row: 4;
+        grid-column: 1;
+    }
+
+    .instagram {
+        grid-row: 5;
+        grid-column: 1;
+    }
+
+    .exhibitions {
+        grid-row: 6;
+    }
+
+    .compilation {
+        grid-row: 7;
+    }
+
+    .back-catalogue {
+        grid-row: 8;
+        grid-column: 1;
+    }
+}

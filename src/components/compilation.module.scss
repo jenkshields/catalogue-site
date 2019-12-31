@@ -2,9 +2,35 @@
 
 .bigGrid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 0.5fr;
   grid-template-rows: 1fr;
 }
+
+.container {
+  width: 60vw;
+  margin: 0 auto;
+  height: 100vh;
+  background-repeat: no-repeat !important;
+  background-size: 33vw 100vh !important;
+  grid-column: 1;
+  border: solid black 1px;
+}
+
+@media only screen and (min-width: 800px) {
+  .bigGrid {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  .container {
+    width: 40vw;
+    margin: 0 auto;
+    height: 100vh;
+    grid-column: 1;
+  }
+}
+
+
 
 .grid {
   display: grid;
@@ -13,15 +39,7 @@
 }
 
 
-.container {
-    width: 33vw;
-    margin: 0 auto;
-    height: 100vh;
-    background-repeat: no-repeat !important;
-    background-size: 33vw 100vh !important;
-    grid-column: 1;
-    border: solid black 1px;
-  }
+
   
 
   .title {
@@ -40,7 +58,7 @@
   .subtitle {
     grid-row: 2;
     grid-column: 6 / -1;
-    @include font-size(1.2rem);
+    @include font-size(1.1rem);
   }
   
   .list {
@@ -60,5 +78,6 @@
 .artistInfoDiv {
   padding-top: 25vh;
   padding-left: 1vw;
+  padding-right: 1vw;
   @include font-size(0.9rem)
 }

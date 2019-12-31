@@ -37,10 +37,10 @@ const Layout = ({ children }) => {
             </div>
           </div>
         </main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
+        <footer className="text-center">
+          <small>© {new Date().getFullYear()}, Built by
           {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+          <a href="https://glitterbox.nz">Glitterbox</a></small>
         </footer>
     </>
   )

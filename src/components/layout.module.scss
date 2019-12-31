@@ -2,15 +2,33 @@
 
 .grid {
     display: grid;
-    grid-template-columns: 2;
+    grid-template-columns: 0.33fr 1fr;
 }
 
 .pageList {
-    grid-column: 1;
-    width: 20vw;
+    grid-row: 1 / 2;
+    width: 100vw;
     padding: 20px;
 }
 
 .content {
-    grid-column: 2;
+    grid-row: 2;
+    grid-column: 1;
 }
+
+
+@media only screen and (min-width: 800px) {
+    .pageList {
+        grid-column: 1;
+        width: 20vw;
+        padding: 20px;
+    }
+    
+    .content {
+        grid-column: 2;
+        grid-row: 1;
+    }
+}
+
+
+
