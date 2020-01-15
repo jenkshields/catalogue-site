@@ -11,6 +11,7 @@ const PageList = () => (
         <a href="https://instagram.com/catalogue.chch" className={styles.instagram}>Instagram</a>
         <h3 className={styles.exhibitions}>Exhibitions</h3>
         <Link to="/exhibitions/compilation" className={styles.compilation}>Compilation</Link>
+        <Link to="/exhibitions/forest-famine" className={styles.forestFamine}>Forest and Famine</Link>
         <Link to="/exhibitions/back-catalogue" className={styles.backCatalogue}>Back Catalogue</Link>
         
     </div>

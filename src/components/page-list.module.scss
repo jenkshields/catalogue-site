@@ -40,9 +40,14 @@
     grid-column: 1;
 }
 
-.back-catalogue {
+.forestFamine {
     grid-row: 4;
     grid-column: 2;
+}
+
+.back-catalogue {
+    grid-row: 4;
+    grid-column: 3;
 }
 
 @media only screen and (min-width: 800px) {
@@ -73,8 +78,13 @@
         grid-row: 7;
     }
 
-    .back-catalogue {
+    .forestFamine {
         grid-row: 8;
+        grid-column: 1;
+    }
+
+    .back-catalogue {
+        grid-row: 9;
         grid-column: 1;
     }
 }
