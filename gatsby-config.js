@@ -17,11 +17,13 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sass`,
     {
-      resolve: `gatsby-plugin-fathom`,
+      resolve: "gatsby-plugin-fathom",
       options: {
-        trackingURL: 'jenniferkshields.fathom.nz',
-        siteID: 'GGCSG',
-      }
+        // Fathom server URL. Defaults to `cdn.usefathom.com`
+        trackingUrl: "fathom.jenniferkshields.nz",
+        // Unique site id
+        siteId: "FATHOM_SITE_ID",
+      },
     },
     {
       resolve: `gatsby-plugin-manifest`,
