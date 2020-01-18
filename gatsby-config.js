@@ -17,6 +17,13 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sass`,
     {
+      resolve: `gatsby-plugin-fathom`,
+      options: {
+        trackingURL: 'jenniferkshields.fathom.nz',
+        siteID: 'GGCSG',
+      }
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `gatsby-starter-default`,
