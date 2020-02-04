@@ -16,6 +16,9 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sass`,
+    `gatsby-plugin-typescript`,
+    `gatsby-plugin-tslint`,
+    `gatsby-plugin-styled-components`,
     {
       resolve: "gatsby-plugin-fathom",
       options: {
