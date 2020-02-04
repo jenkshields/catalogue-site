@@ -34,8 +34,11 @@ const SiteTitle = styled(Serif)`
   font-weight: 300;
   line-height: 1.2;
 `
+interface HeaderProps {
+  siteTitle: string
+}
 
-const Header = ({ siteTitle }) => (
+const Header = ({ siteTitle }: HeaderProps) => (
   <header>
     <Container>
       <SiteTitle>

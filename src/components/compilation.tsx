@@ -84,43 +84,58 @@ const ArtistInfo = styled.div`
   font-size: 0.9rem;
 `
 
-class Compilation extends React.Component {
-  constructor(props) {
+interface CompilationProps {
+  canvasRef: HTMLCanvasElement
+  bgRef: HTMLDivElement
+}
+
+class Compilation extends React.Component<
+  CompilationProps,
+  { artistValue: string }
+> {
+  canvasRef: React.RefObject<HTMLCanvasElement>
+  bgRef: React.RefObject<HTMLDivElement>
+  constructor(props: CompilationProps) {
     super(props)
-    this.canvasRef = React.createRef()
-    this.bgRef = React.createRef()
+    this.canvasRef = React.createRef<HTMLCanvasElement>()
+    this.bgRef = React.createRef<HTMLDivElement>()
     this.state = {
-      artistValue: 0,
+      artistValue: "0",
     }
 
     this.handleClick = this.handleClick.bind(this)
   }
 
-  handleClick(ev) {
-    let value = ev.currentTarget.dataset.id
-    if (this.state.artistValue === value) {
-      this.setState(state => ({
-        artistValue: 0,
-      }))
-    } else {
-      this.setState(state => ({
-        artistValue: value,
-      }))
+  handleClick(ev: React.MouseEvent) {
+    let value = (ev.currentTarget as HTMLButtonElement).dataset.id
+    if (value) {
+      if (this.state.artistValue === value) {
+        this.setState(state => ({
+          artistValue: "0",
+        }))
+      } else {
+        this.setState(state => ({
+          artistValue: value,
+        }))
+      }
     }
+    console.log(value)
   }
 
   componentDidMount() {
     let canvas = this.canvasRef.current
-    let ctx = canvas.getContext("2d")
+    if (canvas) {
+      let ctx = canvas.getContext("2d")
 
-    ctx.lineWidth = 1.5
+      ctx.lineWidth = 1.5
 
-    ctx.beginPath()
-    ctx.moveTo(200.5, 0)
-    ctx.lineTo(30.5, 750)
-    ctx.stroke()
+      ctx.beginPath()
+      ctx.moveTo(200.5, 0)
+      ctx.lineTo(30.5, 750)
+      ctx.stroke()
 
-    this.bgRef.current.style.background = `url(` + canvas.toDataURL() + `)`
+      this.bgRef.current.style.background = `url(` + canvas.toDataURL() + `)`
+    }
   }
 
   render() {
@@ -183,7 +198,7 @@ class Compilation extends React.Component {
 
     let value = this.state.artistValue
 
-    if (value === 0) {
+    if (value === "0") {
       artistOne.display = "none"
       artistTwo.display = "none"
       artistThree.display = "none"
