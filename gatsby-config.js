@@ -25,7 +25,7 @@ module.exports = {
         // Fathom server URL. Defaults to `cdn.usefathom.com`
         trackingUrl: "fathom.jenniferkshields.nz",
         // Unique site id
-        siteId: "FATHOM_SITE_ID",
+        siteId: "GGCSG",
       },
     },
     {
