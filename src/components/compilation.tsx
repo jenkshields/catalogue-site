@@ -107,7 +107,7 @@ class Compilation extends React.Component<
   }
 
   handleClick(ev: React.MouseEvent) {
-    let value = (ev.currentTarget as HTMLButtonElement).dataset.id
+    const value = (ev.currentTarget as HTMLButtonElement).dataset.id
     if (value) {
       if (this.state.artistValue === value) {
         this.setState(state => ({
@@ -123,9 +123,9 @@ class Compilation extends React.Component<
   }
 
   componentDidMount() {
-    let canvas = this.canvasRef.current
+    const canvas = this.canvasRef.current
     if (canvas) {
-      let ctx = canvas.getContext("2d")
+      const ctx = canvas.getContext("2d")
 
       ctx.lineWidth = 1.5
 
@@ -139,51 +139,51 @@ class Compilation extends React.Component<
   }
 
   render() {
-    let artistOne = {
+    const artistOne = {
       display: "none",
     }
 
-    let artistTwo = {
+    const artistTwo = {
       display: "none",
     }
 
-    let artistThree = {
+    const artistThree = {
       display: "none",
     }
 
-    let artistFour = {
+    const artistFour = {
       display: "none",
     }
 
-    let artistFive = {
+    const artistFive = {
       display: "none",
     }
 
-    let artistSix = {
+    const artistSix = {
       display: "none",
     }
 
-    let artistSeven = {
+    const artistSeven = {
       display: "none",
     }
 
-    let artistEight = {
+    const artistEight = {
       display: "none",
     }
 
-    let artistNine = {
+    const artistNine = {
       display: "none",
     }
 
-    let artistTen = {
+    const artistTen = {
       display: "none",
     }
 
-    let artistEleven = {
+    const artistEleven = {
       display: "none",
     }
 
-    let artistTwelve = {
+    const artistTwelve = {
       display: "none",
     }
 
@@ -196,7 +196,7 @@ class Compilation extends React.Component<
     //     console.log(this.state.artistValue)
     // }
 
-    let value = this.state.artistValue
+    const value = this.state.artistValue
 
     if (value === "0") {
       artistOne.display = "none"

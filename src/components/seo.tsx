@@ -10,10 +10,15 @@ import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
+interface MetaItem {
+  name: string
+  content: string
+}
+
 interface SEOTypes {
   description: string
   lang: string
-  meta: Array<any>
+  meta: MetaItem[]
   title: string
 }
 function SEO({ description, lang, meta, title }: SEOTypes) {

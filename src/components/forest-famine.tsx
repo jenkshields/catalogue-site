@@ -1,6 +1,8 @@
 import React from "react"
 import styled from "styled-components"
+import { graphql, useStaticQuery } from "gatsby"
 import bg from "../images/ff-bg.jpg"
+import { DocumentationGrid, DocumentationItem } from "../components/components"
 
 const Grid = styled.div`
   display: grid;
@@ -69,39 +71,71 @@ const Date = styled.div`
   }
 `
 
-const ForestAndFamine = () => (
-  <Grid>
-    <ImageGrid>
-      <Title>
-        <h1>Forest and Famine</h1>
-        <br />
-        <h2>Nick Lowry</h2>
-      </Title>
-    </ImageGrid>
-    <Bio>
-      <p>
-        Nick Lowry is an established artistic director, set designer and mural
-        artist based in Christchurch. Having worked and exhibited across New
-        Zealand and Australia, his main focus is with theater and video
-        production where his passion for spacial art and creating surreal space
-        thrives.
-      </p>
-    </Bio>
-    <Statement>
-      <p>
-        In these works, Nick aims to create a series of pieces that loosely
-        reflect the energy of album cover art collaged into a mass of turbulent
-        scenarios homogenizing into one piece. Using colours and textures that
-        give a cold and unnerving appearance, falling away into an endless
-        space.
-      </p>
-    </Statement>
-    <Date>
-      <p>
-        February 13th 2020 <br />- 8th March 2020
-      </p>
-    </Date>
-  </Grid>
-)
+const ForestAndFamine = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      allForestFamineYaml {
+        edges {
+          node {
+            image {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+              }
+            }
+            caption
+          }
+        }
+      }
+    }
+  `)
+  return (
+    <>
+      <Grid>
+        <ImageGrid>
+          <Title>
+            <h1>Forest and Famine</h1>
+            <br />
+            <h2>Nick Lowry</h2>
+          </Title>
+        </ImageGrid>
+        <Bio>
+          <p>
+            Nick Lowry is an established artistic director, set designer and
+            mural artist based in Christchurch. Having worked and exhibited
+            across New Zealand and Australia, his main focus is with theater and
+            video production where his passion for spacial art and creating
+            surreal space thrives.
+          </p>
+        </Bio>
+        <Statement>
+          <p>
+            In these works, Nick aims to create a series of pieces that loosely
+            reflect the energy of album cover art collaged into a mass of
+            turbulent scenarios homogenizing into one piece. Using colours and
+            textures that give a cold and unnerving appearance, falling away
+            into an endless space.
+          </p>
+        </Statement>
+        <Date>
+          <p>
+            February 13th 2020 <br />- 8th March 2020
+          </p>
+        </Date>
+      </Grid>
+      <DocumentationGrid>
+        {data.allForestFamineYaml.edges.map(({ node }) => (
+          <>
+            <DocumentationItem
+              fluid={node.image.childImageSharp.fluid}
+              alt={node.image.caption}
+            />
+          </>
+        ))}
+      </DocumentationGrid>
+    </>
+  )
+}
 
 export default ForestAndFamine

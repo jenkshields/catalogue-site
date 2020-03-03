@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import Img from "gatsby-image"
 
 export const UnstyledButton = styled.button`
   all: unset;
@@ -21,4 +22,19 @@ export const Blockquote = styled.p`
 `
 export const Title = styled.h1`
   text-align: center;
+`
+
+export const DocumentationGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-rows: repeat(auto);
+  grid-gap: 5px;
+  grid-auto-flow: dense;
+  padding-right: 10px;
+`
+
+export const DocumentationItem = styled(Img)`
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
 `

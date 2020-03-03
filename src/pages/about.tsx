@@ -1,10 +1,33 @@
 import React from "react"
+import styled from "styled-components"
+import Img from "gatsby-image"
+import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { PaddedText, Blockquote } from "../components/components"
+import FermentistLogo from "../images/the-fermentist-logo.svg"
 
-const About = () => (
+const SponsorGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-rows: repeat(auto);
+  grid-gap: 5px;
+  grid-auto-flow: dense;
+`
+
+const SponsorBlock = styled.div``
+
+const StyledImg = styled.img`
+  object-fit: contain;
+  width: 100%;
+`
+
+const StyledGatsbyImg = styled(Img)`
+  object-fit: contain;
+  width: 100%;
+`
+const About = ({ data }) => (
   <>
     <SEO title="About" />
     <Layout>
@@ -44,9 +67,53 @@ const About = () => (
         fabulous gigs and exhibitions. Glitterbox Pursuits will be curating and
         producing the shows, with help with promotion from Tiffany and Lukas at
         Pennylane.
+        <p />
+        <h2>Sponsors</h2>
+        <SponsorGrid>
+          <SponsorBlock>
+            <a href="http://www.thefermentist.co.nz/">
+              <StyledImg src={FermentistLogo} alt="The Fermentist" />
+            </a>
+          </SponsorBlock>
+          <SponsorBlock>
+            <a href="https://pennylanerecords.co.nz">
+              <StyledGatsbyImg
+                fluid={data.PennyLane.childImageSharp.fluid}
+                alt="Penny Lane Records"
+              />
+            </a>
+          </SponsorBlock>
+          <SponsorBlock>
+            <a href="https://glitterbox.nz">
+              <StyledGatsbyImg
+                fluid={data.Glitterbox.childImageSharp.fluid}
+                alt="Glitterbox Pursuits"
+              />
+            </a>
+          </SponsorBlock>
+        </SponsorGrid>
       </PaddedText>
     </Layout>
   </>
 )
 
 export default About
+
+export const query = graphql`
+  query {
+    PennyLane: file(relativePath: { regex: "/pennylane-logo/" }) {
+      childImageSharp {
+        fluid(maxWidth: 1000) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    Glitterbox: file(relativePath: { regex: "/glitterbox-logo/" }) {
+      childImageSharp {
+        fluid(maxWidth: 1000) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+  }
+`
