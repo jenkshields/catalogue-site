@@ -1,15 +1,19 @@
 import * as React from "react"
+import { ThemeProvider } from "styled-components"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import ForestAndFamine from "../components/forest-famine"
+import MixtapePride from "../components/mixtape-pride"
+import { MixtapePrideTheme } from "../components/components"
 
 const IndexPage = () => (
   <>
     <SEO title="Catalogue" />
-    <Layout>
-      <ForestAndFamine />
-    </Layout>
+    <ThemeProvider theme={MixtapePrideTheme}>
+      <Layout>
+        <MixtapePride />
+      </Layout>
+    </ThemeProvider>
   </>
 )
 

@@ -12,10 +12,7 @@ import styled, { createGlobalStyle, ThemeProvider } from "styled-components"
 
 import Header from "./header"
 import PageList from "./page-list"
-
-const theme = {
-  green: "#204022",
-}
+import { DefaultTheme } from "../components/components"
 
 const GlobalStyle = createGlobalStyle`
 *,
@@ -28,6 +25,7 @@ const GlobalStyle = createGlobalStyle`
   font-family: Asap, sans-serif;
   margin: 0;
   line-height: 1.5;
+  background: ${props => props.theme.bg};
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -35,15 +33,20 @@ h1, h2, h3, h4, h5, h6 {
   font-style: italic;
   margin-top: 0;
   margin-bottom: 0.5rem;
+  color: ${props => props.theme.text};
+}
+
+p, li {
+  color: ${props => props.theme.text};
 }
 
 a {
-  color: ${props => props.theme.green};
+  color: ${props => props.theme.link};
   text-decoration: none;
 }
 
 a:hover {
-  color: ${props => props.theme.green};
+  color: ${props => props.theme.link};
 }
 
 p {
@@ -109,7 +112,7 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <ThemeProvider theme={theme}>
+    <>
       <GlobalStyle />
       <Header siteTitle={data.site.siteMetadata.title} />
       <main>
@@ -127,7 +130,7 @@ const Layout = ({ children }) => {
           <a href="https://glitterbox.nz">Glitterbox</a>
         </small>
       </CenteredFooter>
-    </ThemeProvider>
+    </>
   )
 }
 

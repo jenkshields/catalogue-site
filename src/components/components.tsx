@@ -38,3 +38,14 @@ export const DocumentationItem = styled(Img)`
   width: 100%;
   height: 100%;
 `
+
+export const MixtapePrideTheme = {
+  bg: "#9e1f63",
+  link: "#fff",
+  text: "#fff",
+}
+
+export const DefaultTheme = {
+  link: "#204022",
+  bg: "#fff",
+}
