@@ -83,12 +83,22 @@ const ForestFamine = styled(Link)`
   }
 `
 
-const BackCatalogue = styled(Link)`
+const MixtapePride = styled(Link)`
   grid-row: 4;
   grid-column: 3;
 
   @media only screen and (min-width: 800px) {
     grid-row: 9;
+    grid-column: 1;
+  }
+`
+
+const BackCatalogue = styled(Link)`
+  grid-row: 4;
+  grid-column: 4;
+
+  @media only screen and (min-width: 800px) {
+    grid-row: 10;
     grid-column: 1;
   }
 `
@@ -105,6 +115,7 @@ const PageList = () => (
     <ForestFamine to="/exhibitions/forest-famine">
       Forest and Famine
     </ForestFamine>
+    <MixtapePride to="/exhibitions/mixtape-pride">Mixtape: Pride</MixtapePride>
     <BackCatalogue to="/exhibitions/back-catalogue">
       Back Catalogue
     </BackCatalogue>

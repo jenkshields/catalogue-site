@@ -1,5 +1,5 @@
 {
   "typescript.tsdk": ".vscode/pnpify/typescript/lib",
   "prettier.packageManager": "yarn",
-  "prettier.prettierPath": "/Users/jennifershields/Code/catalogue-site/.yarn/unplugged/prettier-npm-1.19.1-e56d246fd2/node_modules/prettier/"
+  "prettier.prettierPath": ".vscode/pnpify/prettier/index.js"
 }
