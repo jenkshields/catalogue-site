@@ -45,6 +45,11 @@ export const MixtapePrideTheme = {
   text: "#fff",
 }
 
+export const NotSleepingTheme = {
+  text: "#F07E9A",
+  link: "#F07E9A",
+}
+
 export const DefaultTheme = {
   link: "#204022",
   bg: "#fff",

@@ -3,15 +3,15 @@ import { ThemeProvider } from "styled-components"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import MixtapePride from "../components/mixtape-pride"
-import { MixtapePrideTheme } from "../components/components"
+import NotSleeping from "../components/not-sleeping"
+import { NotSleepingTheme } from "../components/components"
 
 const IndexPage = () => (
   <>
     <SEO title="Catalogue" />
-    <ThemeProvider theme={MixtapePrideTheme}>
+    <ThemeProvider theme={NotSleepingTheme}>
       <Layout>
-        <MixtapePride />
+        <NotSleeping />
       </Layout>
     </ThemeProvider>
   </>
