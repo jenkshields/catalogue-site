@@ -35,8 +35,8 @@ jobs:
     steps:
       - gatsby-build
       - run:
-        name: Install Netlify CLI
-        command: npm install -g --silent netlify-cli
+          name: Install Netlify CLI
+          command: npm install -g --silent netlify-cli
       - run:
           name: Deploy to netlify
           command: netlify deploy --dir=./public -p
