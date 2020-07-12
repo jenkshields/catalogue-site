@@ -36,4 +36,4 @@ jobs:
       - gatsby-build
       - run:
           name: Deploy to netlify
-          command: npm netlify deploy --dir=./public --prod
+          command: netlify deploy --dir=./public --prod
