@@ -36,4 +36,4 @@ jobs:
       - gatsby-build
       - run:
           name: Deploy to netlify
-          command: netlify deploy --dir=./public --prod
+          command: curl -X POST -d {} ${hook}
