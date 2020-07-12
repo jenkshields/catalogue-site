@@ -36,7 +36,7 @@ jobs:
       - gatsby-build
       - run:
           name: Install Netlify CLI
-          command: npm install -g netlify-cli
+          command: sudo npm install -g netlify-cli
       - run:
           name: Deploy to netlify
           command: netlify deploy --dir=./public -p
