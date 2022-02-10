@@ -31,7 +31,7 @@
     "gatsby-transformer-yaml": "^2.2.25",
     "jquery": "^3.4.1",
     "netlify-cli": "^2.36.0",
-    "node-sass": "^4.13.0",
+    "node-sass": "^7.0.0",
     "popper.js": "^1.16.0",
     "prettier": "^1.19.1",
     "prop-types": "^15.7.2",
